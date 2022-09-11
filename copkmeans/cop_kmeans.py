@@ -56,6 +56,7 @@ def closest_clusters(centers, datapoint):
     return sorted(range(len(distances)), key=lambda x: distances[x]), distances
 
 def initialize_centers(dataset, k, method):
+    random.seed(0)
     if method == 'random':
         ids = list(range(len(dataset)))
         random.shuffle(ids)
